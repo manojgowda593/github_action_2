@@ -4,8 +4,7 @@ sum = a + b
 
 print(sum)
 
-age = int(input("Enter your name: "))
-
+age = 55
 print(age)
 
 # new line
