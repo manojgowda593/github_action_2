@@ -27,7 +27,7 @@ pipeline {
                 script {
                     // Run the container and install dependencies
                     sh """
-                    docker run --rm -v \$(pwd):/app -w /app ${DOCKER_IMAGE} sh -c "
+                    docker run --rm -v \$(pwd):/app -w /app/build ${DOCKER_IMAGE} sh -c "
                         pip install -r requirements.txt
                     "
                     """
@@ -40,7 +40,7 @@ pipeline {
                 script {
                     // Run the container to execute tests
                     sh """
-                    docker run --rm -v \$(pwd):/app -w /app ${DOCKER_IMAGE} sh -c "
+                    docker run --rm -v \$(pwd):/app -w /app/build ${DOCKER_IMAGE} sh -c "
                         python demo.py
                     "
                     """
