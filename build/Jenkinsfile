@@ -41,7 +41,7 @@ pipeline {
                     // Run the container to execute tests
                     sh """
                     docker run --rm -v \$(pwd):/app -w /app ${DOCKER_IMAGE} sh -c "
-                        python test.py
+                        python demo.py
                     "
                     """
                 }
